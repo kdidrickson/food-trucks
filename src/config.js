@@ -16,8 +16,9 @@ module.exports = Object.assign({
   port: process.env.PORT,
   apiHost: process.env.APIHOST || 'localhost',
   apiPort: process.env.APIPORT,
-  apiKeys: {
+  apis: {
     dataSf: {
+      endpoint: process.env.DATA_SF_API_ENDPOINT || `https://data.sfgov.org/resource/6a9r-agq8.json`,
       token: devApiKeys.dataSf && devApiKeys.dataSf.token ? devApiKeys.dataSf.token : process.env.DATA_SF_API_TOKEN,
       secret: devApiKeys.dataSf && devApiKeys.dataSf.secret ? devApiKeys.dataSf.secret : process.env.DATA_SF_API_SECRET,
     }
