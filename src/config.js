@@ -1,5 +1,7 @@
 require('babel-polyfill');
 
+const devApiKeys = require('../devApiKeys.js') || {};
+
 const environment = {
   development: {
     isProduction: false
@@ -14,6 +16,12 @@ module.exports = Object.assign({
   port: process.env.PORT,
   apiHost: process.env.APIHOST || 'localhost',
   apiPort: process.env.APIPORT,
+  apiKeys: {
+    dataSf: {
+      token: devApiKeys.dataSf && devApiKeys.dataSf.token ? devApiKeys.dataSf.token : process.env.DATA_SF_API_TOKEN,
+      secret: devApiKeys.dataSf && devApiKeys.dataSf.secret ? devApiKeys.dataSf.secret : process.env.DATA_SF_API_SECRET,
+    }
+  },
   app: {
     title: 'SF Food Trucks',
     description: 'Find food trucks in San Francisco',
