@@ -2,15 +2,17 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
 import Navbar from 'react-bootstrap/lib/Navbar';
+import LoadingIndicator from 'react-loading-indicator';
 
 import config from '../../config';
 import {set} from '../../redux/modules/location';
 
-@connect(null)
+@connect(({foodTrucks}) => ({ foodTrucks }))
 export default class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
+    foodTrucks: PropTypes.array
   };
 
   constructor() {
@@ -49,6 +51,7 @@ export default class App extends Component {
               />
             </label>
             <input type="submit" name="Search" className="btn btn-primary"/>
+            {this.props.foodTrucks.isFetchingFoodTruckData ? <LoadingIndicator /> : null}
           </form>
         </Navbar>
 

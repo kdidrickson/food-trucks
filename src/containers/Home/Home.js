@@ -8,7 +8,7 @@ import config from '../../config';
 import ListItem from '../../components/ListItem';
 import MapItem from '../../components/MapItem';
 
-@connect(({ foodTrucks, location }) => ({ foodTrucks, location }))
+@connect(({ foodTrucks }) => ({ foodTrucks }))
 export default class Home extends Component {
   static propTypes = {
     foodTrucks: PropTypes.array
