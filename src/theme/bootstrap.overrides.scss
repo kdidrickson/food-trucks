@@ -3,6 +3,11 @@
  *
  */
 
+.navbar {
+	display: flex;
+	align-items: center;
+}
+
 .navbar-brand {
   position: relative;
   padding-left: 50px;
@@ -13,4 +18,10 @@
 .navbar-default .navbar-nav > .active > a:focus {
   color: #33e0ff;
   background-color: transparent;
+}
+
+.form-control {
+	display: inline-block;
+	margin: 0 10px;
+	max-width: 150px;
 }

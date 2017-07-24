@@ -44,10 +44,11 @@ export default class App extends Component {
               <input
                 type="text"
                 name="locationValue"
+                className="form-control"
                 ref={locationValueInput => this.locationValueInput = locationValueInput}
               />
             </label>
-            <input type="submit" name="Search"/>
+            <input type="submit" name="Search" className="btn btn-primary"/>
           </form>
         </Navbar>
 

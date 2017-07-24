@@ -41,10 +41,9 @@ export default function reducer(state = initialState, action = {}) {
 
 // Action creators
 
-export function fetchFoodTruckData({ isFetchingFoodTruckData, foodTruckDataError, status, data } = {}) {
+export function fetchFoodTruckData({ foodTruckDataError, status, data } = {}) {
   return {
     type: FETCH_FOOD_TRUCK_DATA,
-    isFetchingFoodTruckData,
     foodTruckDataError,
     status,
     data

@@ -3,9 +3,11 @@ import React from 'react';
 export default ({
   number
 }) => {
+  const styles = require('./MapItem.scss');
+
   return (
     <div
-      className="foodTruck-mapItem"
+      className={styles.MapItem}
       children={number}
     />
   );

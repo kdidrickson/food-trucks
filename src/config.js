@@ -23,6 +23,7 @@ module.exports = Object.assign({
       secret: devApiKeys.dataSf && devApiKeys.dataSf.secret ? devApiKeys.dataSf.secret : process.env.DATA_SF_API_SECRET,
     },
     googleMaps: {
+      endpoint: process.env.DATA_SF_API_ENDPOINT || `https://maps.googleapis.com/maps/api/geocode/json`,
       token: devApiKeys.googleMaps && devApiKeys.googleMaps.token ? devApiKeys.googleMaps.token : process.env.GOOGLE_MAPS_API_TOKEN
     }
   },
