@@ -88,8 +88,9 @@ export default class Home extends Component {
             <div className="col-md-8">
               <div ref={ googleMap => this.googleMap = googleMap }>
                 <GoogleMap
+                  apiKey={`AIzaSyDl-OmrBjrk5s-TtfVQOtGvFXGa5YzBTEA`}
                   bootstrapURLkeys={{
-                    key: config.apis.googleMaps.token,
+                    key: 'AIzaSyDl-OmrBjrk5s-TtfVQOtGvFXGa5YzBTEA',
                     libraries: 'places'
                   }}
                   defaultCenter={{
