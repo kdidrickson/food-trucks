@@ -44,7 +44,6 @@ export default class Home extends Component {
       });
 
       const size = this.googleMap.getBoundingClientRect();
-      console.log(bounds);
 
       this.setState({ fitProps: fitBounds(bounds, size) });
     }
@@ -89,7 +88,10 @@ export default class Home extends Component {
             <div className="col-md-8">
               <div ref={ googleMap => this.googleMap = googleMap }>
                 <GoogleMap
-                  bootsteapURLkeys={{ key: config.apis.googleMaps.token }}
+                  bootstrapURLkeys={{
+                    key: config.apis.googleMaps.token,
+                    libraries: 'places'
+                  }}
                   defaultCenter={{
                     lat: 37.7582467,
                     lng: -122.4552385
