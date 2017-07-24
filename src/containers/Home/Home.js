@@ -11,6 +11,16 @@ export default class Home extends Component {
     return (
       <div className={styles.home}>
         <Helmet title="Home"/>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              List
+            </div>
+            <div className="col-md-8">
+              Map
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

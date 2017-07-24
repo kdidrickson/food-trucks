@@ -21,6 +21,9 @@ module.exports = Object.assign({
       endpoint: process.env.DATA_SF_API_ENDPOINT || `https://data.sfgov.org/resource/6a9r-agq8.json`,
       token: devApiKeys.dataSf && devApiKeys.dataSf.token ? devApiKeys.dataSf.token : process.env.DATA_SF_API_TOKEN,
       secret: devApiKeys.dataSf && devApiKeys.dataSf.secret ? devApiKeys.dataSf.secret : process.env.DATA_SF_API_SECRET,
+    },
+    googleMaps: {
+      token: devApiKeys.googleMaps && devApiKeys.googleMaps.token ? devApiKeys.googleMaps.token : process.env.GOOGLE_MAPS_API_TOKEN
     }
   },
   app: {

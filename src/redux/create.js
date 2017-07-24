@@ -4,6 +4,8 @@ import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import Immutable from 'immutable';
 
+import fetchFoodTruckData from '../fetch-food-truck-data';
+
 export default function createStore(history, client, data) {
   // Sync dispatched route actions to the history
   const reduxRouterMiddleware = routerMiddleware(history);
@@ -29,6 +31,23 @@ export default function createStore(history, client, data) {
   }
   const store = finalCreateStore(reducer, data);
 
+  // Fetch new food truck data whenever the location changes
+  let currentLocation = {};
+  store.subscribe( () => {
+    const previousLocation = currentLocation;
+    const { dispatch } = store;
+    const state = store.getState();
+
+    currentLocation = state.location;
+
+    if (
+      currentLocation.locationValue &&
+      previousLocation.locationValue !== currentLocation.locationValue &&
+      previousLocation !== currentLocation
+    ) {
+      fetchFoodTruckData({ ...currentLocation, dispatch, client });
+    }
+  });
 
   if (__DEVELOPMENT__ && module.hot) {
     module.hot.accept('./modules/reducer', () => {
