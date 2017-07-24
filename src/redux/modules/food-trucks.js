@@ -3,6 +3,7 @@
 const FETCH_FOOD_TRUCK_DATA = 'food-trucks/food-trucks/FETCH_FOOD_TRUCK_DATA';
 
 const initialState = {
+  data: [],
   isFetchingFoodTruckData: false,
   foodTruckDataError: null
 };
